@@ -12,9 +12,11 @@ IVA = 0.0
 producto = ''
 cantidad = 0
 precio = 0.0
-subtotal=0.0
+subtotal = 0.0
 total = 0.0
 
+# Java
+# String producto = "";
 
 # Asignar Valores a Variables
 IVA = 0.12
@@ -31,6 +33,9 @@ total = subtotal + (subtotal * IVA)
 
 print('Producto=', producto)
 print('Total=', total)
+
+# Java
+# System.out.println("Producto="+ producto);
 
 # Buenas Practias
 # 1) Nombres Descriptivos

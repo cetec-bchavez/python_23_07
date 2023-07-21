@@ -1,6 +1,8 @@
+----------------------- TERMINAL WINDOWS ------------
+
 Lista Paquetes
     pip list 
-    
+
 NumPy
     pip install numpy
 
@@ -9,3 +11,8 @@ matplotlib
 
 Pandas
     pip install pandas
+
+
+Talvez
+    Excel
+        pip install openpyxl

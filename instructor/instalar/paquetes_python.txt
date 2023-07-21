@@ -1,0 +1,11 @@
+Lista Paquetes
+    pip list 
+    
+NumPy
+    pip install numpy
+
+matplotlib  
+    pip install matplotlib
+
+Pandas
+    pip install pandas

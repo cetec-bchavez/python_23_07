@@ -1,5 +1,5 @@
 class Factura0:
-
+    
     def __init__(self,producto,cantidad,precio,subtotal,total) -> None:
         # Columnas Ingredientes
         self.producto = producto

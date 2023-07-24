@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-titanic = None
-sales = None
+titanic:pd.DataFrame = None
+sales:pd.DataFrame = None
 
 def cargarArchivo():
     global titanic,sales
@@ -22,16 +22,35 @@ def cargarInfoGeneral():
     global titanic,sales
 
     print(sales.info())
+    print(sales.shape)
     #print(titanic.corr())
 
-# select Name,Age from titanic
-def mostrarNombreEdad():
+# select Country from sales
+# TOP, LIMIT/OFFSET --> head
+def mostrarPais():
     global titanic,sales
+    
+    print(sales['Country'].head(5))
 
-    print(sales['Country'])
+# select Country,State from sales
+# LIMIT / OFFSET
+def mostrarPaisEstado():
+    global titanic,sales
+    
+    cs = sales[['Country','State']].tail(5)
+
+    print(cs.shape)
+
+#select DISTINCT Country from sales
+def mostrarPaisesUnico():
+    global titanic,sales
+    
+    print(sales['Country'].unique())
 
 cargarArchivo()
 
-cargarInfoGeneral()
+#cargarInfoGeneral()
+#mostrarPais()
+#mostrarPaisEstado()
 
-mostrarNombreEdad()
+mostrarPaisesUnico()

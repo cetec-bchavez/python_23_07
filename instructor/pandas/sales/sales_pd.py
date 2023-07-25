@@ -43,14 +43,53 @@ def mostrarPaisEstado():
 
 #select DISTINCT Country from sales
 def mostrarPaisesUnico():
-    global titanic,sales
+    global sales
     
     print(sales['Country'].unique())
 
+def mostrarFilasCosto():
+    global sales
+    
+    filas1 =sales.loc[sales['Unit_Cost']>200]
+
+    print(filas1)
+
+    #filas1.to_csv('Costos_mayor_50.csv')
+
+def mostrarFilasCosto2():
+    global sales
+    
+    filas1 =sales[sales['Unit_Cost']>1900]
+
+    print(filas1)
+
+def mostrarFilasCosto3():
+    global sales
+    
+    filas1 =sales[(sales['Unit_Cost']>1900) & (sales['Month']=='May')]
+
+    print(filas1)
+
+def mostrarFilasCosto3Grafico():
+    global sales
+    
+    filas1 =sales[(sales['Unit_Cost']>1900) & (sales['Month']=='May')]
+
+    filas1.plot(kind='hist')
+    #filas1['Unit_Cost'].plot(kind='hist')
+    #filas1.plot(kind='scatter',x='Country',y='Unit_Cost')
+    plt.show()
+
+    #print(filas1)
+
 cargarArchivo()
 
+mostrarFilasCosto3Grafico()
+
+#mostrarFilasCosto3()
+#mostrarFilasCosto2()
+#mostrarFilasCosto()
 #cargarInfoGeneral()
 #mostrarPais()
 #mostrarPaisEstado()
-
-mostrarPaisesUnico()
+#mostrarPaisesUnico()

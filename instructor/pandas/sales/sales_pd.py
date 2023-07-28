@@ -5,7 +5,7 @@ import pandas as pd
 titanic:pd.DataFrame = None
 sales:pd.DataFrame = None
 
-def cargarArchivo():
+def salesCargarArchivo():
     global titanic,sales
     
     sales = pd.read_csv('C:/data/use_sales_data.csv')
@@ -18,7 +18,7 @@ def cargarArchivo():
 
     #print(sales)
 
-def cargarInfoGeneral():
+def salesCargarInfoGeneral():
     global titanic,sales
 
     print(sales.info())
@@ -27,14 +27,14 @@ def cargarInfoGeneral():
 
 # select Country from sales
 # TOP, LIMIT/OFFSET --> head
-def mostrarPais():
+def salesMostrarPais():
     global titanic,sales
     
     print(sales['Country'].head(5))
 
 # select Country,State from sales
 # LIMIT / OFFSET
-def mostrarPaisEstado():
+def salesMostrarPaisEstado():
     global titanic,sales
     
     cs = sales[['Country','State']].tail(5)
@@ -42,12 +42,12 @@ def mostrarPaisEstado():
     print(cs.shape)
 
 #select DISTINCT Country from sales
-def mostrarPaisesUnico():
+def salesMostrarPaisesUnico():
     global sales
     
     print(sales['Country'].unique())
 
-def mostrarFilasCosto():
+def salesMostrarFilasCosto():
     global sales
     
     filas1 =sales.loc[sales['Unit_Cost']>200]
@@ -56,21 +56,21 @@ def mostrarFilasCosto():
 
     #filas1.to_csv('Costos_mayor_50.csv')
 
-def mostrarFilasCosto2():
+def salesMostrarFilasCosto2():
     global sales
     
     filas1 =sales[sales['Unit_Cost']>1900]
 
     print(filas1)
 
-def mostrarFilasCosto3():
+def salesMostrarFilasCosto3():
     global sales
     
     filas1 =sales[(sales['Unit_Cost']>1900) & (sales['Month']=='May')]
 
     print(filas1)
 
-def mostrarFilasCosto3Grafico():
+def salesMostrarFilasCosto3Grafico():
     global sales
     
     filas1 =sales[(sales['Unit_Cost']>1900) & (sales['Month']=='May')]
@@ -82,14 +82,14 @@ def mostrarFilasCosto3Grafico():
 
     #print(filas1)
 
-cargarArchivo()
+#salesCargarArchivo()
 
-mostrarFilasCosto3Grafico()
+#salesMostrarFilasCosto3Grafico()
 
-#mostrarFilasCosto3()
-#mostrarFilasCosto2()
-#mostrarFilasCosto()
-#cargarInfoGeneral()
-#mostrarPais()
-#mostrarPaisEstado()
-#mostrarPaisesUnico()
+#salesMostrarFilasCosto3()
+#salesMostrarFilasCosto2()
+#salesMostrarFilasCosto()
+#salesCargarInfoGeneral()
+#salesMostrarPais()
+#salesMostrarPaisEstado()
+#salesMostrarPaisesUnico()

@@ -4,33 +4,33 @@ import pandas as pd
 
 calls:pd.DataFrame = None
 
-def load_data():
+def callsLoad_data():
     global calls
 
     calls = pd.read_excel('C:/data/Customer_Call_List.xlsx')
 
-def show_info():
+def callsShow_info():
     global calls
 
     print(calls.info())
 
-def eliminar_columna():
+def callsEliminar_columna():
     global calls
 
     calls = calls.drop(columns=['Not_Useful_Column','Do_Not_Contact','Paying Customer'])
 
-def crear_columna():
+def callsCrear_columna():
     global calls
 
     calls['Name_All'] = calls['First_Name'] + calls['Last_Name']
 
     print(calls['Name_All'])
 
-load_data()
+callsLoad_data()
 
-show_info()
+callsShow_info()
 
-crear_columna()
-#eliminar_columna()
+callsCrear_columna()
+#callsEliminar_columna()
 
-show_info()
+callsShow_info()

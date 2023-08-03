@@ -85,7 +85,6 @@ def salesMostrarFilasCosto3Grafico():
 #salesCargarArchivo()
 
 #salesMostrarFilasCosto3Grafico()
-
 #salesMostrarFilasCosto3()
 #salesMostrarFilasCosto2()
 #salesMostrarFilasCosto()

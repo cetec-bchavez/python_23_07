@@ -26,11 +26,30 @@ def callsCrear_columna():
 
     print(calls['Name_All'])
 
+def callsReemplazarColumna():
+    global calls
+
+    calls['First_Name'] = calls['First_Name'].str.upper()
+    #calls['First_Name'] = calls['First_Name'].str.replace('VERDADERO','V')
+
+    print(calls['First_Name'])
+
+def callsReemplazarColumnaFila():
+    global calls
+    #Regex --> Like
+    for indice in calls.index:
+        if calls.loc[indice,'Do_Not_Contact'] == 'Y' or calls.loc[indice,'Do_Not_Contact'] == 'YES':
+            calls.loc[indice,'Do_Not_Contact'] = 'SI'
+
+    print(calls['Do_Not_Contact'])
+
+
 callsLoad_data()
 
-callsShow_info()
+callsReemplazarColumnaFila()
 
-callsCrear_columna()
+#callsReemplazarColumna()
+#callsShow_info()
+#callsCrear_columna()
 #callsEliminar_columna()
-
-callsShow_info()
+#callsShow_info()

@@ -41,6 +41,13 @@ def salesMostrarPaisEstado():
 
     print(cs.shape)
 
+def salesMostrarPaisEstadoReturn():
+    global titanic,sales
+    
+    cs = sales[['Country','State']].tail(5)
+
+    return cs
+
 #select DISTINCT Country from sales
 def salesMostrarPaisesUnico():
     global sales
@@ -53,6 +60,13 @@ def salesMostrarFilasCosto():
     filas1 =sales.loc[sales['Unit_Cost']>200]
 
     print(filas1)
+
+def salesMostrarFilasCostoReturn():
+    global sales
+    
+    filas1 =sales.loc[sales['Unit_Cost']>200]
+
+    return filas1
 
     #filas1.to_csv('Costos_mayor_50.csv')
 

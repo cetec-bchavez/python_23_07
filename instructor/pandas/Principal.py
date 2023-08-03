@@ -15,18 +15,18 @@ def mostrarMenu():
     opcion=int(input('Ingrese una Opcion:'))
 
 
+if __name__ == '__main__':
+    while True:
 
-while True:
+        input('Teclee Enter...')
+        os.system('cls')
 
-    input('Teclee Enter...')
-    os.system('cls')
+        mostrarMenu()
 
-    mostrarMenu()
-
-    if(opcion==0):
-        break
-    elif(opcion==1):
-        gn.exec_load_data_fechas()
-    elif(opcion==2):
-        sl.salesCargarArchivo()
-        sl.salesMostrarFilasCosto3Grafico()
+        if(opcion==0):
+            break
+        elif(opcion==1):
+            gn.exec_load_data_fechas()
+        elif(opcion==2):
+            sl.salesCargarArchivo()
+            sl.salesMostrarFilasCosto3Grafico()

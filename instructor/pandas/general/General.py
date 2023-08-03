@@ -17,4 +17,5 @@ def exec_load_data_fechas():
   print(df_fechas[['dias','fecha1','fecha2']])
 
 
-#exec_load_data_fechas()
+if __name__ == '__main__':
+  exec_load_data_fechas()

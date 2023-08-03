@@ -1,5 +1,6 @@
 from sqlite3 import Error
 import csv
+import pandas as pd
 
 from base.connection import create_connection
 from base.factura import Factura
@@ -51,13 +52,15 @@ def export_to_csv(facturas):
         for factura1 in facturas:
             writer.writerow([factura1.id,factura1.producto,factura1.cantidad,factura1.precio,factura1.total])
 
+def get_pandas_factura(conn):
+    df_facturas = pd.read_sql('SELECT * FROM factura',conn)
 
+    print(df_facturas.info())
 
-if __name__ == '__main__':
-    # Paso 1 (Crear Conexion a BD)
-    connection1 = create_connection("facturacion.db")
-    #print("Conexion Realizada")
-    # Facturas
+    print(df_facturas[['producto','cantidad']])
+
+def get_cargar_facturas(conn):
+     # Facturas
     
     # Paso 2 (Crear SQL a ejecutar)
     sql_select_factura = get_sql_select_factura()
@@ -76,4 +79,13 @@ if __name__ == '__main__':
         print(factura1.id,factura1.producto,factura1.cantidad,factura1.precio,factura1.total)
 
     # Paso 5 exportar datos de Lista/Clase/Objetos a Archivo CSV
-    export_to_csv(facturas)
+    #export_to_csv(facturas)
+
+if __name__ == '__main__':
+    # Paso 1 (Crear Conexion a BD)
+    connection1 = create_connection("facturacion.db")
+    #print("Conexion Realizada")
+   
+    #get_cargar_facturas(connection1)
+
+    get_pandas_factura(connection1)
